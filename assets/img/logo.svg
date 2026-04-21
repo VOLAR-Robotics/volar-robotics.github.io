@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 44" role="img" aria-label="VOLAR Robotics">
+  <defs>
+    <linearGradient id="vg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22D3EE"/>
+      <stop offset="1" stop-color="#67E8F9"/>
+    </linearGradient>
+  </defs>
+  <!-- Glyph: stylized wing/palm -->
+  <g transform="translate(4 4)">
+    <path d="M2 30 C 12 6, 28 2, 38 14 C 30 16, 24 22, 20 30 Z" fill="url(#vg)"/>
+    <circle cx="30" cy="11" r="2.4" fill="#0A1F3D"/>
+  </g>
+  <!-- Wordmark -->
+  <g fill="currentColor" font-family="Inter, system-ui, sans-serif" font-weight="800" font-size="22" letter-spacing="2">
+    <text x="52" y="28">VOLAR</text>
+  </g>
+  <g fill="#5B6B82" font-family="Inter, system-ui, sans-serif" font-weight="500" font-size="9" letter-spacing="3">
+    <text x="138" y="28">ROBOTICS</text>
+  </g>
+</svg>
