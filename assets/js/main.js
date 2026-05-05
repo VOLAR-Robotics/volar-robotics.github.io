@@ -9,6 +9,14 @@
     });
   }
 
+  // Email obfuscation — reconstruct mailto: only on user interaction, never in static HTML
+  document.querySelectorAll('.js-email').forEach(function (a) {
+    function build() { a.href = 'mailto:' + a.dataset.u + '@' + a.dataset.d; }
+    a.addEventListener('mouseenter', build);
+    a.addEventListener('focus', build);
+    a.addEventListener('touchstart', build, { passive: true });
+  });
+
   // Reveal on scroll
   var els = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window && els.length) {

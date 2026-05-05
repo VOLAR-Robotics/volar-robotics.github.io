@@ -34,7 +34,7 @@
 
 /* --- Reset / base ----------------------------------------- */
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: clip; }
 body {
   margin: 0;
   font-family: var(--font-sans);
@@ -200,6 +200,7 @@ section { padding: clamp(4rem, 8vw, 7rem) 0; }
   pointer-events: none;
 }
 .hero-visual img { width: 100%; height: auto; display: block; }
+.hero-visual-mobile { display: none; }
 .hero h1 { color: var(--white); }
 .hero h1 .accent { color: var(--cyan); }
 .hero .lead {
@@ -214,6 +215,18 @@ section { padding: clamp(4rem, 8vw, 7rem) 0; }
 @media (max-width: 980px) {
   .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
   .hero-visual { justify-self: center; max-width: 420px; }
+}
+@media (max-width: 640px) {
+  .hero { padding-top: clamp(2.5rem, 8vw, 4rem); padding-bottom: clamp(2.5rem, 8vw, 4rem); }
+  .hero-visual { display: none; }
+  .hero-visual-mobile {
+    display: block;
+    margin: 1.2rem auto 0;
+    max-width: 340px;
+    filter: drop-shadow(0 12px 28px rgba(0,0,0,.35));
+  }
+  .hero-visual-mobile img { width: 100%; height: auto; }
+  .btn-arrow { display: none; }
 }
 
 .pill-row { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: 2.5rem; }
@@ -260,6 +273,7 @@ section { padding: clamp(4rem, 8vw, 7rem) 0; }
 }
 @media (max-width: 640px) {
   .grid.cols-2, .grid.cols-3, .grid.cols-4 { grid-template-columns: 1fr; }
+  .stat-grid { grid-template-columns: 1fr; }
 }
 
 .card {
@@ -285,11 +299,24 @@ section { padding: clamp(4rem, 8vw, 7rem) 0; }
 /* Technology section uses a darker/larger card variant */
 .tech { background: var(--paper); }
 .tech-card {
-  display: grid; grid-template-columns: 56px 1fr; gap: 1.2rem;
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas: "icon title" "body body";
+  column-gap: 1.2rem;
+  row-gap: .4rem;
   padding: 2rem;
 }
-.tech-card .icon { width: 56px; height: 56px; border-radius: 14px; }
+.tech-card .icon    { grid-area: icon;  width: 56px; height: 56px; border-radius: 14px; align-self: center; }
 .tech-card .icon svg { width: 30px; height: 30px; }
+.tech-card > h3     { grid-area: title; align-self: center; margin-bottom: 0; }
+.tech-card .tech-body { grid-area: body; }
+@media (max-width: 640px) {
+  .tech-card {
+    grid-template-areas: "icon title" "body body";
+  }
+  .tech-card .tech-body { padding-top: .4rem; }
+}
 
 /* --- Differentiators ------------------------------------- */
 .diff { background: var(--white); }
@@ -305,10 +332,18 @@ section { padding: clamp(4rem, 8vw, 7rem) 0; }
 
 /* --- Markets --------------------------------------------- */
 .markets { background: var(--paper); }
-.market-card .tag {
-  display: inline-block; font-size: .72rem; font-family: var(--font-mono);
-  letter-spacing: .1em; text-transform: uppercase; color: var(--muted);
+.market-card.has-icon {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas: "icon title" "body body";
+  column-gap: 1rem;
+  row-gap: .4rem;
 }
+.market-card.has-icon .icon  { grid-area: icon;  width: 44px; height: 44px; align-self: center; }
+.market-card.has-icon > h3   { grid-area: title; align-self: center; margin-bottom: 0; }
+.market-card.has-icon .tech-body { grid-area: body; }
+.market-card.has-icon .tech-body p { margin: 0; }
 .markets-subhead {
   font-family: var(--font-mono);
   font-size: .82rem;
@@ -319,6 +354,18 @@ section { padding: clamp(4rem, 8vw, 7rem) 0; }
   font-weight: 600;
 }
 .markets-subhead:first-of-type { margin-top: 0; }
+.market-card .tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: .7rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  background: rgba(34,211,238,.1);
+  border-radius: 999px;
+  padding: .2rem .55rem;
+  margin-bottom: .55rem;
+}
 
 /* --- Roadmap --------------------------------------------- */
 .roadmap { background: var(--navy); color: var(--white); }
@@ -359,7 +406,12 @@ section { padding: clamp(4rem, 8vw, 7rem) 0; }
 }
 
 /* --- Team ------------------------------------------------ */
-.team .founder { padding: 1.8rem; }
+.team .founder { padding: 1.8rem; position: relative; }
+.founder-link {
+  position: absolute; inset: 0; z-index: 1; border-radius: inherit;
+}
+.team .founder:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.team .founder { transition: transform .2s ease, box-shadow .2s ease; }
 .founder-head { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
 .avatar {
   width: 56px; height: 56px; border-radius: 50%;
