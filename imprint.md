@@ -9,7 +9,7 @@ permalink: /imprint/
     <h1>Imprint</h1>
 
     <p>This website presents <strong>VOLAR Robotics</strong>, an early-stage deep-tech venture
-    spinning off from the SOAR-TOUCH research programme at Sapienza Università di Roma.</p>
+    spinning off from the Robotics Laboratory of Sapienza Università di Roma.</p>
 
     <h2>Affiliation</h2>
     <p>
