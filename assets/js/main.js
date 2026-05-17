@@ -48,10 +48,6 @@
     var n         = cards.length;
     var page      = 0;
     var MOBILE_BP = 820;
-    // Cached layout values — read from DOM only when needed (init / resize / swipe-start)
-    var cardW = 0;
-    var gapW  = 0;
-
     function isMobile() { return window.innerWidth <= MOBILE_BP; }
 
     function pageCount() {
@@ -59,22 +55,11 @@
       return isMobile() ? n : Math.max(1, n - (desktopPerPage - 1));
     }
 
-    function measure() {
-      var perPage = isMobile() ? 1 : desktopPerPage;
-      gapW  = parseFloat(window.getComputedStyle(track).columnGap) || 0;
-      // Derive cardW from the carousel's own width — avoids flex-basis % resolution issues
-      cardW = (carousel.offsetWidth - (perPage - 1) * gapW) / perPage;
-    }
-
-    // Returns the actual current translateX of the track (mid-animation safe)
-    function getTranslateX() {
-      var t = window.getComputedStyle(track).transform;
-      if (!t || t === 'none') return 0;
-      try { return new DOMMatrix(t).m41; } catch (_) { return 0; }
-    }
-
     function offsetForPage(p) {
-      return p * (cardW + gapW);
+      if (n <= 0) return 0;
+      var gap   = parseFloat(window.getComputedStyle(track).columnGap) || 0;
+      var cardW = cards[0].offsetWidth;
+      return p * (cardW + gap);
     }
 
     function applyPage(p) {
@@ -108,47 +93,6 @@
     prevBtn.addEventListener('click', function () { applyPage(page - 1); });
     nextBtn.addEventListener('click', function () { applyPage(page + 1); });
 
-    // Touch swipe — drag freely, snap to nearest page on release.
-    // Dimensions are cached at touchstart so touchmove is pure arithmetic (no DOM reads).
-    var touchStartX = 0;
-    var touchDeltaX = 0;
-    var startOffset = 0;
-    var dragging    = false;
-
-    track.addEventListener('touchstart', function (e) {
-      measure();                              // refresh dimensions
-      touchStartX = e.touches[0].clientX;
-      touchDeltaX = 0;
-      startOffset = -getTranslateX();         // actual visual position, not computed target
-      dragging    = true;
-      track.style.transition = 'none';
-    }, { passive: true });
-
-    track.addEventListener('touchmove', function (e) {
-      if (!dragging) return;
-      touchDeltaX = e.touches[0].clientX - touchStartX;
-      // No DOM reads here — uses only cached values
-      track.style.transform = 'translateX(' + (-startOffset + touchDeltaX) + 'px)';
-    }, { passive: true });
-
-    function snapEnd() {
-      if (!dragging) return;
-      dragging = false;
-      track.style.transition = '';
-      var threshold = cardW * 0.25;
-      if (touchDeltaX < -threshold) {
-        applyPage(page + 1);
-      } else if (touchDeltaX > threshold) {
-        applyPage(page - 1);
-      } else {
-        applyPage(page);
-      }
-    }
-
-    track.addEventListener('touchend',    snapEnd, { passive: true });
-    track.addEventListener('touchcancel', snapEnd, { passive: true });
-
-    measure();
     buildDots();
     applyPage(0);
 
