@@ -94,6 +94,38 @@
     prevBtn.addEventListener('click', function () { applyPage(page - 1); });
     nextBtn.addEventListener('click', function () { applyPage(page + 1); });
 
+    // Touch swipe — drag freely, snap to nearest page on release
+    var touchStartX = 0;
+    var touchDeltaX = 0;
+    var dragging    = false;
+
+    track.addEventListener('touchstart', function (e) {
+      touchStartX = e.touches[0].clientX;
+      touchDeltaX = 0;
+      dragging    = true;
+      track.style.transition = 'none';
+    }, { passive: true });
+
+    track.addEventListener('touchmove', function (e) {
+      if (!dragging) return;
+      touchDeltaX = e.touches[0].clientX - touchStartX;
+      track.style.transform = 'translateX(' + (-offsetForPage(page) + touchDeltaX) + 'px)';
+    }, { passive: true });
+
+    track.addEventListener('touchend', function () {
+      if (!dragging) return;
+      dragging = false;
+      track.style.transition = '';
+      var threshold = cards[0].offsetWidth * 0.25;
+      if (touchDeltaX < -threshold) {
+        applyPage(page + 1);
+      } else if (touchDeltaX > threshold) {
+        applyPage(page - 1);
+      } else {
+        applyPage(page); // snap back
+      }
+    }, { passive: true });
+
     buildDots();
     applyPage(0);
 
