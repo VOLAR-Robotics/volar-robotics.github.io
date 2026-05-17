@@ -60,8 +60,17 @@
     }
 
     function measure() {
+      var perPage = isMobile() ? 1 : desktopPerPage;
       gapW  = parseFloat(window.getComputedStyle(track).columnGap) || 0;
-      cardW = n > 0 ? cards[0].offsetWidth : 0;
+      // Derive cardW from the carousel's own width — avoids flex-basis % resolution issues
+      cardW = (carousel.offsetWidth - (perPage - 1) * gapW) / perPage;
+    }
+
+    // Returns the actual current translateX of the track (mid-animation safe)
+    function getTranslateX() {
+      var t = window.getComputedStyle(track).transform;
+      if (!t || t === 'none') return 0;
+      try { return new DOMMatrix(t).m41; } catch (_) { return 0; }
     }
 
     function offsetForPage(p) {
@@ -107,10 +116,10 @@
     var dragging    = false;
 
     track.addEventListener('touchstart', function (e) {
-      measure();                              // refresh cached dimensions once
+      measure();                              // refresh dimensions
       touchStartX = e.touches[0].clientX;
       touchDeltaX = 0;
-      startOffset = offsetForPage(page);      // capture current position
+      startOffset = -getTranslateX();         // actual visual position, not computed target
       dragging    = true;
       track.style.transition = 'none';
     }, { passive: true });
