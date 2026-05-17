@@ -48,6 +48,9 @@
     var n         = cards.length;
     var page      = 0;
     var MOBILE_BP = 820;
+    // Cached layout values — read from DOM only when needed (init / resize / swipe-start)
+    var cardW = 0;
+    var gapW  = 0;
 
     function isMobile() { return window.innerWidth <= MOBILE_BP; }
 
@@ -56,11 +59,13 @@
       return isMobile() ? n : Math.max(1, n - (desktopPerPage - 1));
     }
 
+    function measure() {
+      gapW  = parseFloat(window.getComputedStyle(track).columnGap) || 0;
+      cardW = n > 0 ? cards[0].offsetWidth : 0;
+    }
+
     function offsetForPage(p) {
-      if (n <= 0) return 0;
-      var gap       = parseFloat(window.getComputedStyle(track).columnGap) || 20;
-      var cardWidth = cards[0].offsetWidth;
-      return p * (cardWidth + gap);
+      return p * (cardW + gapW);
     }
 
     function applyPage(p) {
@@ -94,14 +99,18 @@
     prevBtn.addEventListener('click', function () { applyPage(page - 1); });
     nextBtn.addEventListener('click', function () { applyPage(page + 1); });
 
-    // Touch swipe — drag freely, snap to nearest page on release
+    // Touch swipe — drag freely, snap to nearest page on release.
+    // Dimensions are cached at touchstart so touchmove is pure arithmetic (no DOM reads).
     var touchStartX = 0;
     var touchDeltaX = 0;
+    var startOffset = 0;
     var dragging    = false;
 
     track.addEventListener('touchstart', function (e) {
+      measure();                              // refresh cached dimensions once
       touchStartX = e.touches[0].clientX;
       touchDeltaX = 0;
+      startOffset = offsetForPage(page);      // capture current position
       dragging    = true;
       track.style.transition = 'none';
     }, { passive: true });
@@ -109,23 +118,28 @@
     track.addEventListener('touchmove', function (e) {
       if (!dragging) return;
       touchDeltaX = e.touches[0].clientX - touchStartX;
-      track.style.transform = 'translateX(' + (-offsetForPage(page) + touchDeltaX) + 'px)';
+      // No DOM reads here — uses only cached values
+      track.style.transform = 'translateX(' + (-startOffset + touchDeltaX) + 'px)';
     }, { passive: true });
 
-    track.addEventListener('touchend', function () {
+    function snapEnd() {
       if (!dragging) return;
       dragging = false;
       track.style.transition = '';
-      var threshold = cards[0].offsetWidth * 0.25;
+      var threshold = cardW * 0.25;
       if (touchDeltaX < -threshold) {
         applyPage(page + 1);
       } else if (touchDeltaX > threshold) {
         applyPage(page - 1);
       } else {
-        applyPage(page); // snap back
+        applyPage(page);
       }
-    }, { passive: true });
+    }
 
+    track.addEventListener('touchend',    snapEnd, { passive: true });
+    track.addEventListener('touchcancel', snapEnd, { passive: true });
+
+    measure();
     buildDots();
     applyPage(0);
 
@@ -133,6 +147,7 @@
     window.addEventListener('resize', function () {
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(function () {
+        measure();
         buildDots();
         applyPage(Math.min(page, pageCount() - 1));
       }, 120);
