@@ -377,6 +377,8 @@ section { padding: clamp(4rem, 8vw, 7rem) 0; }
   gap: 1.25rem;
   transition: transform .38s cubic-bezier(.4,0,.2,1);
   will-change: transform;
+  touch-action: pan-y;   /* browser owns vertical scroll; JS owns horizontal drag */
+  user-select: none;     /* prevent text selection while dragging */
 }
 .chapter-card {
   flex: 0 0 calc(50% - .625rem); /* desktop: 2 cards visible */
