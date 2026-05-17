@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Imprint — VOLAR Robotics
+title: Imprint — Volar Robotics
 permalink: /imprint/
 ---
 
@@ -8,7 +8,7 @@ permalink: /imprint/
   <div class="container">
     <h1>Imprint</h1>
 
-    <p>This website presents <strong>VOLAR Robotics</strong>, an early-stage deep-tech venture
+    <p>This website presents <strong>Volar Robotics</strong>, an early-stage deep-tech venture
     spinning off from the Robotics Laboratory of Sapienza Università di Roma.</p>
 
     <h2>Affiliation</h2>

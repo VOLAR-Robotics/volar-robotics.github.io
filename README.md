@@ -1,6 +1,6 @@
 # volar-robotics.github.io
 
-Source for the [VOLAR Robotics](https://volar-robotics.github.io) website.
+Source for the [Volar Robotics](https://volar-robotics.github.io) website.
 Static site built with Jekyll and served by GitHub Pages.
 
 ## Local development

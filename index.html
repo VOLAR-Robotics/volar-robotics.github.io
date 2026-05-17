@@ -1,6 +1,6 @@
 ---
 layout: default
-title: VOLAR Robotics — Tactile aerial robotics for industrial inspection
+title: Volar Robotics — Tactile aerial robotics for industrial inspection
 ---
 
 <a id="top"></a>
@@ -19,7 +19,7 @@ title: VOLAR Robotics — Tactile aerial robotics for industrial inspection
           decoding="async" fetchpriority="high">
       </div>
       <p class="lead">
-        VOLAR Robotics builds aerial robots that turn the friction cone into a passive,
+        Volar Robotics builds aerial robots that turn the friction cone into a passive,
         virtually&#8209;infinite&#8209;bandwidth stabiliser — for stable, energy&#8209;efficient
         contact on any surface, ferrous or not.
       </p>
@@ -193,10 +193,10 @@ title: VOLAR Robotics — Tactile aerial robotics for industrial inspection
 </section>
 
 <!-- ===================== DIFFERENTIATORS ===================== -->
-<section class="diff">
+<section id="why" class="diff">
   <div class="container">
     <header class="section-head reveal">
-      <p class="eyebrow">Why VOLAR</p>
+      <p class="eyebrow">Why Volar</p>
       <h2>Designed for accessibility and frequent use.</h2>
       <p>By moving complexity from mechanics to software, our platform is dramatically
       simpler — and more affordable — than tilting-rotor systems, while doing things visual
@@ -228,46 +228,72 @@ title: VOLAR Robotics — Tactile aerial robotics for industrial inspection
   </div>
 </section>
 
-<!-- ===================== ROADMAP ===================== -->
-<section id="roadmap" class="roadmap">
+<!-- ===================== RESEARCH ===================== -->
+<section id="research" class="research">
   <div class="container">
     <header class="section-head reveal">
-      <p class="eyebrow">Roadmap</p>
-      <h2>Touch &amp; Sense → Touch &amp; Act → Grasp &amp; Move.</h2>
-      <p>A staged path from tactile diagnostics today to full aerial manipulation tomorrow,
-      compounding data and capability at every step.</p>
+      <p class="eyebrow">Research</p>
+      <h2>Research, told in chapters.</h2>
+      <p>Each chapter is a stand-alone project that builds toward a single technical thesis.
+      Open one for results, papers and code.</p>
     </header>
 
-    <div class="timeline">
-      <article class="step reveal">
-        <span class="dot" aria-hidden="true"></span>
-        <p class="when">2025–Apr 2026 · TRL 5 ✓</p>
-        <h3>Core technology validated</h3>
-        <p>Friction-anchor control and soft-optical tactile sensing validated in the lab
-        and in early in-flight demonstrations on a fully-actuated multirotor.</p>
-      </article>
-      <article class="step reveal">
-        <span class="dot" aria-hidden="true"></span>
-        <p class="when">2026–2027 · TRL 6 target</p>
-        <h3>Field validation with academic partners</h3>
-        <p>Integration onto a fully-actuated aerial platform; controlled-disturbance
-        validation in a partner flight facility; first quantitative NDT pilots.</p>
-      </article>
-      <article class="step reveal">
-        <span class="dot" aria-hidden="true"></span>
-        <p class="when">2027</p>
-        <h3>First service Proofs of Concept</h3>
-        <p>Joint inspection campaigns with industrial service providers — validating
-        the technology in production conditions and gathering field data.</p>
-      </article>
-      <article class="step reveal">
-        <span class="dot" aria-hidden="true"></span>
-        <p class="when">2028+</p>
-        <h3>Product launch &amp; certification</h3>
-        <p>All-in-one platform with cloud subscription and proprietary consumables,
-        progressing through the EASA / CE certification path.</p>
-      </article>
-    </div>
+    {%- comment -%}
+      Add a new <article class="chapter-card"> per chapter.
+    {%- endcomment -%}
+
+    <div class="chapter-carousel">
+      <div class="carousel-track">
+        <article class="chapter-card reveal">
+          <div class="chapter-badge" aria-hidden="true">
+            <span class="label">Chapter</span>
+            <span class="num">01</span>
+          </div>
+          <div class="chapter-content">
+            <h3>SOAR-Touch</h3>
+            <p class="subtitle">Soft Optical Aerial Robot — Touch</p>
+            <p>Laid the perception and control foundations for tactile aerial interaction:
+            soft optical tactile feedback into an energy-aware contact controller,
+            carried from simulation through manipulator HIL to flight on a fully-actuated
+            multirotor.</p>
+            <div class="chapter-meta">
+              <span class="meta">Field-validated</span>
+              <span class="meta">Year 2025–2026</span>
+            </div>
+            <a class="chapter-link" href="{{ '/projects/soar-touch/' | relative_url }}">Read more <span class="arrow">→</span></a>
+          </div>
+        </article>
+
+        <article class="chapter-card reveal">
+          <div class="chapter-badge" aria-hidden="true">
+            <span class="label">Chapter</span>
+            <span class="num">02</span>
+          </div>
+          <div class="chapter-content">
+            <h3>SOAR-Sense</h3>
+            <p class="subtitle">Soft Optical Aerial Robot — Sense</p>
+            <p>Carries the SOAR-Touch foundations into in-flight surface sensing —
+            friction-aware contact paired with soft optical tactile feedback for reliable, repeatable and
+            energy-efficient inspection of industrial assets.</p>
+            <div class="chapter-meta">
+              <span class="meta">Planned</span>
+              <span class="meta">Year 2026–2027</span>
+            </div>
+            <span class="chapter-link is-disabled">Details coming soon</span>
+          </div>
+        </article>
+      </div><!-- /.carousel-track -->
+
+      <div class="carousel-controls">
+        <button class="carousel-prev" aria-label="Previous page">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="carousel-dots" role="tablist" aria-label="Pages"></div>
+        <button class="carousel-next" aria-label="Next page">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div><!-- /.carousel-controls -->
+    </div><!-- /.chapter-carousel -->
   </div>
 </section>
 
@@ -277,13 +303,12 @@ title: VOLAR Robotics — Tactile aerial robotics for industrial inspection
     <header class="section-head reveal">
       <p class="eyebrow">Team</p>
       <h2>Engineers and scientists from Sapienza DIAG.</h2>
-      <p>VOLAR Robotics is co-founded by two control engineers trained in aerial
-      physical interaction at the Robotics Laboratory of Sapienza Università di Roma.</p>
+      <p>Volar Robotics is co-founded by two control engineers trained in aerial
+      physical interaction at the Robotics Laboratory of Sapienza University of Rome.</p>
     </header>
 
     <div class="grid cols-2">
       <article class="card founder reveal">
-        <a class="founder-link" href="https://r-orelli.eu" target="_blank" rel="noopener noreferrer" aria-label="Simone Orelli personal website"></a>
         <div class="founder-head">
           <span class="avatar" aria-hidden="true">SO</span>
           <div>
@@ -294,11 +319,11 @@ title: VOLAR Robotics — Tactile aerial robotics for industrial inspection
         <p>Designs the flight control laws that let a multirotor enter, hold and leave
         contact with the environment — with stability, robustness and energy efficiency
         as first-class goals.</p>
-        <p class="affil">PhD candidate, ABRO · DIAG · Sapienza Università di Roma</p>
+        <p class="affil">PhD candidate, ABRO · DIAG · Sapienza University of Rome</p>
+        <a class="founder-link" href="https://r-orelli.eu" target="_blank" rel="noopener noreferrer">Personal website <span class="arrow">→</span></a>
       </article>
 
       <article class="card founder reveal">
-        <a class="founder-link" href="https://r-rapuano.com" target="_blank" rel="noopener noreferrer" aria-label="Antonio Rapuano personal website"></a>
         <div class="founder-head">
           <span class="avatar" aria-hidden="true">AR</span>
           <div>
@@ -308,7 +333,8 @@ title: VOLAR Robotics — Tactile aerial robotics for industrial inspection
         </div>
         <p>Leads the AI pipeline that turns soft-tactile signals into real-time friction
         estimates and contact intelligence, closing the perception–control loop.</p>
-        <p class="affil">PhD candidate, ABRO · DIAG · Sapienza Università di Roma</p>
+        <p class="affil">PhD candidate, ABRO · DIAG · Sapienza University of Rome</p>
+        <a class="founder-link" href="https://r-rapuano.com" target="_blank" rel="noopener noreferrer">Personal website <span class="arrow">→</span></a>
       </article>
     </div>
 
@@ -334,8 +360,8 @@ title: VOLAR Robotics — Tactile aerial robotics for industrial inspection
       <div class="contact-card">
         <p class="label">Affiliation</p>
         <p style="color: rgba(255,255,255,.9); margin: 0;">
-          DIAG — Dipartimento di Ingegneria Informatica, Automatica e Gestionale<br>
-          Sapienza Università di Roma · Italy
+          <a href="https://www.diag.uniroma1.it/en" target="_blank" rel="noopener noreferrer">DIAG — Department of Computer, Control, and Management Engineering</a><br>
+          Sapienza University of Rome · Italy
         </p>
       </div>
     </div>
@@ -349,9 +375,9 @@ title: VOLAR Robotics — Tactile aerial robotics for industrial inspection
       <p class="eyebrow">In affiliation with</p>
       <a class="affiliation-logo-link" href="https://www.uniroma1.it" rel="noopener" target="_blank">
         <img class="affiliation-logo" src="/assets/img/Uniroma1.svg"
-             alt="Sapienza Università di Roma" width="220" height="auto">
+             alt="Sapienza University of Rome" width="220" height="auto">
       </a>
-      <p class="affiliation-sub">DIAG — Dipartimento di Ingegneria Informatica, Automatica e Gestionale</p>
+      <p class="affiliation-sub"><a href="https://www.diag.uniroma1.it/en" target="_blank" rel="noopener noreferrer">DIAG — Department of Computer, Control, and Management Engineering</a></p>
     </div>
   </div>
 </section>

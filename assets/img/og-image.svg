@@ -20,7 +20,7 @@
     <circle cx="240" cy="90" r="14" fill="#0A1F3D"/>
   </g>
   <g fill="#FFFFFF" font-family="Inter, system-ui, sans-serif">
-    <text x="500" y="290" font-size="84" font-weight="800" letter-spacing="2">VOLAR Robotics</text>
+    <text x="500" y="290" font-size="84" font-weight="800" letter-spacing="2">Volar Robotics</text>
     <text x="500" y="350" font-size="32" font-weight="500" fill="#67E8F9">Enabling tactile interaction in the sky</text>
   </g>
 </svg>

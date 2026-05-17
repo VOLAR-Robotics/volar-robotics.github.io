@@ -1,7 +1,7 @@
-title: VOLAR Robotics
+title: Volar Robotics
 tagline: Enabling tactile interaction in the sky
 description: >-
-  VOLAR Robotics builds soft aerial robots that physically interact with
+  Volar Robotics builds soft aerial robots that physically interact with
   industrial assets — turning drones from cameras into workers for
   non-destructive testing and inspection.
 url: "https://volar-robotics.github.io"
@@ -9,7 +9,7 @@ baseurl: ""
 lang: en
 
 author:
-  name: VOLAR Robotics
+  name: Volar Robotics
 
 # Use Jekyll's safe defaults; no remote theme.
 theme: null
@@ -23,6 +23,11 @@ sass:
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
 
 exclude:
   - Gemfile
@@ -38,3 +43,8 @@ defaults:
     values:
       layout: default
       image: /assets/img/og-image.svg
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: default
