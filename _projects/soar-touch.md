@@ -96,7 +96,7 @@ permalink: /projects/soar-touch/
       </div>
 
       <div class="role-block reveal">
-        <h4>Project Manager</h4>
+        <h4>Principal Investigator</h4>
         <ul>
           <li><strong>Alessandro De Luca</strong> · Sapienza University of Rome · DIAG</li>
         </ul>
