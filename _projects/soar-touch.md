@@ -50,29 +50,29 @@ permalink: /projects/soar-touch/
 
     <article class="work-block reveal">
       <h3>Part I · Soft optical tactile sensing</h3>
-      <p>A complete <strong>tactile sensing pipeline</strong> that turns a silicone-membrane camera
-      sensor into a quantitative <strong>contact-state observer</strong>. A purpose-built characterization
+      <p>A complete tactile sensing pipeline that turns a silicone-membrane camera
+      sensor into a quantitative contact-state observer. A purpose-built characterization
       rig on a UR10 manipulator at Sapienza DIAG produced the ground-truth dataset for a
-      <strong>heteroscedastic deep regressor</strong> — itself trained against a <strong>physics-informed loss</strong>
-      that anchors lateral force estimates to torque consistency. An <strong>Extended Kalman
-      Filter</strong> fuses the regressor's per-sample uncertainty with the carrier's pose to
-      produce stable estimates of <strong>contact patch geometry</strong> and contact force. The full
-      pipeline was first validated in <strong>closed-loop force–motion control</strong> on the UR10, then
-      deployed in flight on the UTwente <strong>miniThex hexarotor</strong> with both flat and
+      heteroscedastic deep regressor — itself trained against a physics-informed loss
+      that anchors lateral force estimates to torque consistency. An Extended Kalman
+      Filter fuses the regressor's per-sample uncertainty with the carrier's pose to
+      produce stable estimates of contact patch geometry and contact force. The full
+      pipeline was first validated in closed-loop force–motion control on the UR10, then
+      deployed in flight on the UTwente miniThex hexarotor with both flat and
       tilted sensor-mount configurations.</p>
     </article>
 
     <article class="work-block reveal">
       <h3>Part II · SOT-aided aerial interaction</h3>
-      <p>An <strong>energy-aware aerial interaction stack</strong> built on top of the tactile pipeline.
-      A <strong>geometric SE(3) controller</strong> drives the multirotor's pose; a <strong>dual-channel
-      admittance layer</strong> (contact-compliant in translation, stiff in rotation) shapes the contact
-      wrench; an on-line <strong>manifold-aware reference generator</strong> solves a quadratic program
-      on SO(3) at every cycle, exploiting the <strong>friction cone</strong> and surface reaction force
-      to minimize rotor power while maintaining the <strong>hybrid force–motion reference</strong>. The
+      <p>An energy-aware aerial interaction stack built on top of the tactile pipeline.
+      A geometric SE(3) controller drives the multirotor's pose; a dual-channel
+      admittance layer (contact-compliant in translation, stiff in rotation) shapes the contact
+      wrench; an on-line manifold-aware reference generator solves a quadratic program
+      on SO(3) at every cycle, exploiting the friction cone and surface reaction force
+      to minimize rotor power while maintaining the hybrid force–motion reference. The
       full stack was validated in Simulink with stochastic wind and contact-model
-      uncertainty, then in <strong>hardware-in-the-loop</strong> on a Franka Research
-      3 arm, then in <strong>free flight</strong> on the miniThex against both vertical and upward-tilted
+      uncertainty, then in hardware-in-the-loop on a Franka Research
+      3 arm, then in free flight on the miniThex against both vertical and upward-tilted
       surfaces.</p>
     </article>
   </div>
