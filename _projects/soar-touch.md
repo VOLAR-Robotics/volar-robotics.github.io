@@ -135,7 +135,7 @@ permalink: /projects/soar-touch/
       </li>
       <li class="reveal">
         <p class="when">Dec 2025 · Dataset</p>
-        <h3>Tactile dataset acquired at Sapienza DIAG</h3>
+        <h3>Tactile dataset acquired</h3>
         <p>A controlled six-phase contact protocol on a UR10 manipulator equipped with a force/torque sensor
         produces the labeled wrench–pose–image dataset that will ground the
         tactile inverse-model regressor.</p>
