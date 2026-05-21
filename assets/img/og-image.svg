@@ -1,26 +1,152 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0A1F3D"/>
-      <stop offset="1" stop-color="#1B3866"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 1200 630"
+   version="1.1"
+   id="svg34915"
+   sodipodi:docname="og-image.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview34917"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="0.5"
+     inkscape:cx="303"
+     inkscape:cy="387"
+     inkscape:window-width="1920"
+     inkscape:window-height="1043"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg34915" />
+  <defs
+     id="defs34891">
+    <linearGradient
+       id="bg"
+       x1="0"
+       y1="0"
+       x2="1"
+       y2="1">
+      <stop
+         offset="0"
+         stop-color="#0A1F3D"
+         id="stop34881" />
+      <stop
+         offset="1"
+         stop-color="#1B3866"
+         id="stop34883" />
     </linearGradient>
-    <linearGradient id="acc" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#22D3EE"/>
-      <stop offset="1" stop-color="#67E8F9"/>
+    <linearGradient
+       id="acc"
+       x1="0"
+       y1="0"
+       x2="1"
+       y2="1">
+      <stop
+         offset="0"
+         stop-color="#22D3EE"
+         id="stop34886" />
+      <stop
+         offset="1"
+         stop-color="#67E8F9"
+         id="stop34888" />
+    </linearGradient>
+    <linearGradient
+       id="g"
+       x1="8.2099323"
+       y1="19.905989"
+       x2="44.333637"
+       y2="56.029694"
+       gradientTransform="matrix(4.1302108,0,0,2.7838857,155.12466,173.921)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0"
+         stop-color="#22D3EE"
+         id="stop29021" />
+      <stop
+         offset="1"
+         stop-color="#67E8F9"
+         id="stop29023" />
     </linearGradient>
   </defs>
-  <rect width="1200" height="630" fill="url(#bg)"/>
-  <g opacity=".15" stroke="#67E8F9" stroke-width="1">
-    <path d="M0 500 Q 300 380 600 460 T 1200 420"/>
-    <path d="M0 540 Q 300 420 600 500 T 1200 460"/>
-    <path d="M0 580 Q 300 460 600 540 T 1200 500"/>
+  <rect
+     width="1200"
+     height="630"
+     fill="url(#bg)"
+     id="rect34893" />
+  <g
+     opacity=".15"
+     stroke="#67E8F9"
+     stroke-width="1"
+     id="g34901">
+    <path
+       d="M0 500 Q 300 380 600 460 T 1200 420"
+       id="path34895" />
+    <path
+       d="M0 540 Q 300 420 600 500 T 1200 460"
+       id="path34897" />
+    <path
+       d="M0 580 Q 300 460 600 540 T 1200 500"
+       id="path34899" />
   </g>
-  <g transform="translate(80 200)">
-    <path d="M0 220 C 90 60, 240 30, 320 110 C 240 130, 180 180, 150 230 Z" fill="url(#acc)"/>
-    <circle cx="240" cy="90" r="14" fill="#0A1F3D"/>
+  <g
+     fill="#ffffff"
+     font-family="Inter, system-ui, sans-serif"
+     id="g34913"
+     transform="translate(-119.52734,13.585938)">
+    <text
+       x="500"
+       y="350"
+       font-size="32px"
+       font-weight="500"
+       fill="#67e8f9"
+       id="text34911">Enabling tactile interaction in the sky</text>
   </g>
-  <g fill="#FFFFFF" font-family="Inter, system-ui, sans-serif">
-    <text x="500" y="290" font-size="84" font-weight="800" letter-spacing="2">Volar Robotics</text>
-    <text x="500" y="350" font-size="32" font-weight="500" fill="#67E8F9">Enabling tactile interaction in the sky</text>
+  <g
+     fill="currentColor"
+     font-family="Inter, system-ui, sans-serif"
+     font-weight="800"
+     font-size="22px"
+     letter-spacing="2"
+     id="g30645"
+     transform="matrix(4.3364057,0,0,4.3364057,151.72032,193.32935)">
+    <text
+       x="52"
+       y="28"
+       id="text30643">VOLAR</text>
   </g>
+  <g
+     fill="#5b6b82"
+     font-family="Inter, system-ui, sans-serif"
+     font-weight="500"
+     font-size="9px"
+     letter-spacing="3"
+     id="g30649"
+     transform="matrix(4.3364057,0,0,4.3364057,151.72032,193.32935)">
+    <text
+       x="144"
+       y="28"
+       id="text30647">ROBOTICS</text>
+  </g>
+  <path
+     d="m 189.03344,329.90128 c 47.47224,-108.50801 115.28972,-122.07151 149.1985,-74.59923 -40.69053,6.78175 -74.59927,33.90874 -88.16277,74.59923 z"
+     fill="url(#g)"
+     id="path29030"
+     style="fill:url(#g);stroke-width:3.39087" />
+  <circle
+     cx="297.54138"
+     cy="241.73856"
+     r="10.8508"
+     fill="#0a1f3d"
+     id="circle29032"
+     style="stroke-width:3.39087" />
 </svg>
