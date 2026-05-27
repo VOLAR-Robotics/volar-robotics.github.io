@@ -40,11 +40,11 @@
        y2="1">
       <stop
          offset="0"
-         stop-color="#22D3EE"
+         stop-color="#2E6BF0"
          id="stop30630" />
       <stop
          offset="1"
-         stop-color="#67E8F9"
+         stop-color="#5B8DFF"
          id="stop30632" />
     </linearGradient>
     <linearGradient
@@ -57,18 +57,18 @@
        gradientUnits="userSpaceOnUse">
       <stop
          offset="0"
-         stop-color="#22D3EE"
+         stop-color="#2E6BF0"
          id="stop29021" />
       <stop
          offset="1"
-         stop-color="#67E8F9"
+         stop-color="#5B8DFF"
          id="stop29023" />
     </linearGradient>
   </defs>
   <!-- Glyph: stylized wing/palm -->
   <!-- Wordmark -->
   <g
-     fill="currentColor"
+     fill="#0A0E1A"
      font-family="Inter, system-ui, sans-serif"
      font-weight="800"
      font-size="22px"
@@ -81,7 +81,7 @@
        id="text30643">VOLAR</text>
   </g>
   <g
-     fill="#5b6b82"
+     fill="#5C6B86"
      font-family="Inter, system-ui, sans-serif"
      font-weight="500"
      font-size="9px"
@@ -102,7 +102,7 @@
      cx="33.627182"
      cy="13.163435"
      r="2.5022566"
-     fill="#0a1f3d"
+     fill="#F5A623"
      id="circle29032"
      style="stroke-width:0.781955" />
 </svg>

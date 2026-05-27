@@ -9,25 +9,6 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
-  <sodipodi:namedview
-     id="namedview34917"
-     pagecolor="#ffffff"
-     bordercolor="#000000"
-     borderopacity="0.25"
-     inkscape:showpageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#d1d1d1"
-     showgrid="false"
-     inkscape:zoom="0.5"
-     inkscape:cx="303"
-     inkscape:cy="387"
-     inkscape:window-width="1920"
-     inkscape:window-height="1043"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="svg34915" />
   <defs
      id="defs34891">
     <linearGradient
@@ -38,11 +19,11 @@
        y2="1">
       <stop
          offset="0"
-         stop-color="#0A1F3D"
+         stop-color="#0A0E1A"
          id="stop34881" />
       <stop
          offset="1"
-         stop-color="#1B3866"
+         stop-color="#1B2D4F"
          id="stop34883" />
     </linearGradient>
     <linearGradient
@@ -53,11 +34,11 @@
        y2="1">
       <stop
          offset="0"
-         stop-color="#22D3EE"
+         stop-color="#2E6BF0"
          id="stop34886" />
       <stop
          offset="1"
-         stop-color="#67E8F9"
+         stop-color="#5B8DFF"
          id="stop34888" />
     </linearGradient>
     <linearGradient
@@ -70,11 +51,11 @@
        gradientUnits="userSpaceOnUse">
       <stop
          offset="0"
-         stop-color="#22D3EE"
+         stop-color="#2E6BF0"
          id="stop29021" />
       <stop
          offset="1"
-         stop-color="#67E8F9"
+         stop-color="#5B8DFF"
          id="stop29023" />
     </linearGradient>
   </defs>
@@ -84,8 +65,8 @@
      fill="url(#bg)"
      id="rect34893" />
   <g
-     opacity=".15"
-     stroke="#67E8F9"
+     opacity=".18"
+     stroke="#5B8DFF"
      stroke-width="1"
      id="g34901">
     <path
@@ -108,11 +89,11 @@
        y="350"
        font-size="32px"
        font-weight="500"
-       fill="#67e8f9"
+       fill="#5B8DFF"
        id="text34911">Enabling tactile interaction in the sky</text>
   </g>
   <g
-     fill="currentColor"
+     fill="#EAF0FB"
      font-family="Inter, system-ui, sans-serif"
      font-weight="800"
      font-size="22px"
@@ -125,7 +106,7 @@
        id="text30643">VOLAR</text>
   </g>
   <g
-     fill="#5b6b82"
+     fill="#B8C4D8"
      font-family="Inter, system-ui, sans-serif"
      font-weight="500"
      font-size="9px"
@@ -146,7 +127,7 @@
      cx="297.54138"
      cy="241.73856"
      r="10.8508"
-     fill="#0a1f3d"
+     fill="#F5A623"
      id="circle29032"
      style="stroke-width:3.39087" />
 </svg>
